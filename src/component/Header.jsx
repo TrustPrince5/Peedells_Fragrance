@@ -46,6 +46,7 @@ function Header() {
   //       className={`fixed top-0 left-0 h-full w-64 bg-[#0B0500] text-white transform ${
   //         isOpen ? "translate-x-0" : "-translate-x-full"
   //       } transition-transform duration-300 ease-in-out z-50 md:hidden`}>
+          
   //       <div className="flex justify-between items-center p-5 border-b border-gray-700">
   //         <h1 className="font-serif text-xl">
   //           <Link to="/" onClick={() => setIsOpen(false)}>
@@ -146,30 +147,16 @@ function Header() {
 
         <div className="nav hidden md:flex">
           <ul className=" flex gap-4 justify-around items-center">
-            <li className="hover:border-b hover:translate-x-0.5 hover:duration-200">
-              <Link to="/">Home</Link>
-            </li>
-            <li className="hover:border-b hover:translate-x-0.5 hover:duration-200">
-              <Link to="/Products">Shop</Link>
-            </li>
-            <li className="hover:border-b hover:translate-x-0.5 hover:duration-200">
-              <Link to="/AboutUs">About</Link>
-            </li>
-            <li className="hover:border-b hover:translate-x-0.5 hover:duration-200">
-              <Link to="/Contact">Contact</Link>
-            </li>
+            <li className="hover:border-b hover:translate-x-0.5 hover:duration-200"><Link to="/">Home</Link></li>
+            <li className="hover:border-b hover:translate-x-0.5 hover:duration-200"><Link to="/Products">Shop</Link></li>
+            <li className="hover:border-b hover:translate-x-0.5 hover:duration-200"><Link to="/AboutUs">About</Link></li>
+            <li className="hover:border-b hover:translate-x-0.5 hover:duration-200"><Link to="/Contact">Contact</Link></li>
           </ul>
         </div>
         <div className="flex justify-between items-center gap-2">
           <div className="search hidden md:flex justify-center items-center gap-2 border-b border-gray-100">
-            <span>
-              <CiSearch size={18} />
-            </span>
-            <input
-              type="text"
-              placeholder="Search..."
-              className="border-none outline-none bg-transparent"
-            />
+            <span><CiSearch size={18} /></span>
+            <input type="text" placeholder="Search..." className="border-none outline-none bg-transparent" />
             <Link to="/cart">
               <div className="relative">
                 <FaShoppingCart size={18} />
@@ -183,101 +170,50 @@ function Header() {
         {isAuthenticated ? (
           <>
             <div className="hidden md:flex justify-between items-center gap-7">
-              <Link
-                onClick={() => {
-                  logout();
-                }}
-                className="flex items-center gap-1"
-              >
-                Logout
-                <IoMdLogIn size={25} />
-              </Link>
+              <Link onClick={() => {logout();}} className="flex items-center gap-1">Logout<IoIosContact size={25} /></Link>
             </div>
           </>
         ) : (
           <div className="hidden md:flex justify-between items-center gap-7">
-            <Link to="/Login" className="flex items-center gap-1">
-              Login
-              <IoMdLogIn size={25} />
-            </Link>
-            <Link to="/Register" className="flex items-center gap-1">
-              Register
-              <IoIosContact size={25} />
-            </Link>
+            <Link to="/Login" className="flex items-center gap-1">Login <IoMdLogIn size={25} /></Link>
+            <Link to="/Register" className="flex items-center gap-1">Register <IoIosContact size={25} /></Link>
           </div>
         )}
-
         <div
           className="md:hidden absolute right-4 top-6 cursor-pointer z-50"
-          onClick={() => setIsOpen(!isOpen)}
-        >
-          <GiHamburgerMenu size={28} />
+          onClick={() => setIsOpen(!isOpen)}> <GiHamburgerMenu size={28} />
         </div>
         
 
         <div
-          className={`absolute top-17 right-0 w-48 transform ${
-            isOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
-          } overflow-hidden transition-all duration-900 ease-in-out md:hidden z-40 rounded-l-xl`}
-        >
-          <div className="bg-black p-5 flex flex-col gap-4 border-t border-black">
-            <Link
-              to="/"
-              onClick={() => setIsOpen(false)}
-              className="hover:border-b hover:translate-x-0.5 hover:duration-200"
-            >
-              Home
-            </Link>
-            <Link
-              to="/Products"
-              onClick={() => setIsOpen(false)}
-              className="hover:border-b hover:translate-x-0.5 hover:duration-200"
-            >
-              Shop
-            </Link>
-            <Link
-              to="/AboutUs"
-              onClick={() => setIsOpen(false)}
-              className="hover:border-b hover:translate-x-0.5 hover:duration-200"
-            >
-              About
-            </Link>
-            <Link
-              to="/Contact"
-              onClick={() => setIsOpen(false)}
-              className="hover:border-b hover:translate-x-0.5 hover:duration-200"
-            >
-              Contact
-            </Link>
-            <Link
-              to="/Login"
-              onClick={() => setIsOpen(false)}
-              className="flex items-center gap-1"
-            >
-              Login <IoMdLogIn size={25} />
-            </Link>
-            {/* <Link to="/Cart" onClick={() => setIsOpen(false)} className="flex items-center gap-1">Cart <FaShoppingCart size={18} /></Link> */}
-            <div className="p-5 border-t border-gray-700">
-              <Link
-                to="/cart"
-                className="flex items-center gap-2"
-                onClick={() => setIsOpen(false)}
-              >
+          className={`fixed top-0 left-0 h-full w-64 bg-black text-white transform ${
+            isOpen ? "translate-x-0" : "-translate-x-full"
+          } transition-transform duration-800 ease-in-out z-50 md:hidden`}>
+            
+            <div className="flex justify-between items-center p-6  border-gray-100">
+              <div className="pl-5 search flex justify-center items-center border-b border-gray-100 w-48">
+                <input type="text" className="outline-none border-none bg-transparent flex-5"  placeholder="Search..."/>
+                    {/* <span><CiSearch size={18} /></span> */}
+             </div>
+            </div>
+
+
+          <div className="bg-black p-5 flex flex-col gap-10 border-y border-gray-700">
+            <Link to="/" onClick={() => setIsOpen(false)} className="hover:border-b hover:translate-x-0.5 hover:duration-200">Home</Link>
+            <Link to="/Products" onClick={() => setIsOpen(false)} className="hover:border-b hover:translate-x-0.5 hover:duration-200">Shop</Link>
+            <Link to="/AboutUs" onClick={() => setIsOpen(false)} className="hover:border-b hover:translate-x-0.5 hover:duration-200">About</Link>
+            <Link to="/Contact" onClick={() => setIsOpen(false)} className="hover:border-b hover:translate-x-0.5 hover:duration-200">Contact</Link>
+            <Link to="/Login" onClick={() => setIsOpen(false)} className="hover:border-b hover:translate-x-0.5 hover:duration-200 flex items-center gap-1" >Login <IoMdLogIn size={25} /></Link>
+
+              <Link to="/cart" className="flex items-center gap-2 hover:border-b hover:translate-x-0.5 hover:duration-200" onClick={() => setIsOpen(false)}>
+               <span>Cart</span>
                 <div className="relative">
                   <FaShoppingCart size={25} />
                   <span className="absolute -top-1 -right-2 bg-red-600 text-white text-[10px] font-bold w-4 h-4 flex items-center justify-center rounded-full">
                     {cartCount}
                   </span>
                 </div>
-                <span>Cart</span>
               </Link>
-            </div>
-            {isOpen && (
-              <div
-                className="fixed inset-0 bg-black opacity-50 z-40 md:hidden"
-                onClick={() => setIsOpen(false)}
-              ></div>
-            )}
           </div>
         </div>
       </div>

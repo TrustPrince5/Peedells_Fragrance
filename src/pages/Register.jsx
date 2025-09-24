@@ -33,8 +33,8 @@ function Register() {
 
 
   return (
-    <div className="relative w-full h-full md:px-12">
-      <img src="/img/veleno.webp" alt="Brand Background"  className="absolute inset-0 w-full h-full object-cover"/>
+       <div className="min-h-screen flex items-center justify-center bg-[url('/img/veleno.webp')] bg-cover bg-center relative">
+      {/* <img src="/img/veleno.webp" alt="Brand Background"  className="absolute inset-0 w-full h-full object-cover"/> */}
       <div className="absolute inset-0 bg-black/50"></div>
        <div className="relative flex flex-col md:flex-row justify-around items-center md:gap-24 px-6 md:px-12 space-y-10 md:space-y-60 text-white font-poppins">
          <div className="max-w-xl space-y-8 mt-12 text-center md:text-left">
