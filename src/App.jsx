@@ -13,7 +13,7 @@ import ThankYou from "./pages/ThankYou";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
 import Contact from "./pages/Contact";
-import Aboutus from "./pages/Aboutus";
+import AboutUs from "./pages/AboutUs";
 import Loader from "./component/Loader";
 import { ToastContainer } from "react-toastify";
 import { getCategories } from "./services/api/categories";
@@ -60,7 +60,7 @@ function App() {
               <Route path="/ThankYou" element={<ThankYou />} />
               <Route path="/Login" element={<Login />} />
               <Route path="/Register" element={<Register />} />
-              <Route path="/AboutUs" element={<Aboutus />} />
+              <Route path="/AboutUs" element={<AboutUs />} />
               <Route path="/Contact" element={<Contact />} />
             </Routes>
             <Footer />

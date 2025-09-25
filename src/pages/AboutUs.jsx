@@ -3,7 +3,8 @@ import Container from '../component/shared/Container';
 
 
 
-function Aboutus() {
+
+function AboutUs() {
 
   return (
    <div>
@@ -55,4 +56,4 @@ function Aboutus() {
   )
 }
 
-export default Aboutus;
+export default AboutUs;
